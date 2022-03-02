@@ -33,20 +33,20 @@ class Presenter {
 	}
 
 	function putMenu() {
-		$this->putLink('?action=putHome', 'Home');
-		$this->putLink('?action=printCalendars', 'Show Calendars');
-		$this->putLink('?logout', 'Log Out');
+		$this->putLink('?action=putHome', 'Trang chủ');
+		$this->putLink('?action=printCalendars', 'Danh sách lịch');
+		$this->putLink('?logout', 'Đăng xuất');
 		print('<br><br>');
 	}
 
 	private function putEvent($event) {
-		$this->putTitle('Details for event: ' . $event['summary']);
-		$this->putBlock('This event has status ' . $event['status']);
-		$this->putBlock('It was created at ' .
+		$this->putTitle('Chi tiết sự kiện: ' . $event['summary']);
+		$this->putBlock('Trạng thái của sự kiện: ' . $event['status']);
+		$this->putBlock('Tạo lúc ' .
 				date('Y-m-d H:m', strtotime($event['created'])) .
-				' and last updated at ' .
+				' và sửa gần nhất lúc ' .
 				date('Y-m-d H:m', strtotime($event['updated'])) . '.');
-		$this->putBlock('For this event you have to <strong>' . $event['summary'] . '</strong>.');
+		$this->putBlock('Ghi chú, tổng kết <strong>' . $event['summary'] . '</strong>.');
 	}
 
 	private function putCalendarTitle() {
@@ -60,7 +60,7 @@ class Presenter {
 	}
 
 	private function putCalendarListTitle() {
-		$this->putTitle('These are your calendars:');
+		$this->putTitle('Đây là danh sách lịch của bạn:');
 	}
 
 	private function putEventListElement($event) {

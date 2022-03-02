@@ -31,7 +31,7 @@ function isAuthenticated(Google_Client &$client) {
 	}
 
 	$authUrl = $client->createAuthUrl();
-	print "<a class='login' href='$authUrl'>Connect Me!</a>";
+	print "<a class='login' href='$authUrl'>Kết nối với TK Google!</a>";
 }
 
 
@@ -40,7 +40,7 @@ function listAllCalendars(Google_Client &$client) {
 		return;
 
 	$calList = createCalendar($client)->calendarList->listCalendarList();
-	print "<h1>Calendar List</h1><pre>" . print_r($calList, true) . "</pre>";
+	print "<h1>Danh sách lịch của bạn</h1><pre>" . print_r($calList, true) . "</pre>";
 }
 
 function getCalendarList($client) {
